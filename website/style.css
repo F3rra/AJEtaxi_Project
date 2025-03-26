@@ -61,3 +61,5 @@ footer p {
     margin: 0;
     font-size: 0.9em;
 }
+
+#map { height: 900px; }
