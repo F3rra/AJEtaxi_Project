@@ -1,37 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AJE TAXI - Homepage</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AJE TAXI</title>
+<link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <header>
-        <div class="logo">AJE TAXI</div>
-        <div class="profile-icon" onclick="openModal('loginModal')">Profile</div>
-    </header>
-    <main>
-        <div class="buttons">
-            <button>Start</button>
-            <button>Destination</button>
-            <button>View rates</button>
-        </div>
-        <div class="map">Map displaying current location</div>
-    </main>
-    <div id="loginModal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal('loginModal')">&times;</span>
-            <h2>Login/Register</h2>
-            <form id="loginForm">
-                <input type="text" placeholder="Username" required>
-                <input type="email" placeholder="Email" required>
-                <input type="password" placeholder="Password" required>
-                <button type="submit">Login</button>
-                <button type="button" onclick="openRegister()">Register</button>
-            </form>
-        </div>
+  <header>
+    <div>AJE TAXI</div>
+    <nav>
+      <a href="#" onclick="showPage('home')">Home</a>
+      <a href="#" onclick="showPage('login')">Login</a>
+      <a href="#" onclick="showPage('register')">Register</a>
+      <a href="#" onclick="showPage('rates')">Rates</a>
+      <a href="#" onclick="showPage('dashboard-driver')">Driver Profile</a>
+      <a href="#" onclick="showPage('dashboard-passenger')">Passenger Profile</a>
+    </nav>
+  </header>
+
+  <div id="home" class="page visible">
+    <h2>Homepage</h2>
+    <div class="input-group">
+      <input type="text" id="start" placeholder="Enter starting point">
+      <input type="text" id="destination" placeholder="Enter destination">
+      <button onclick="startRoute()">Go</button>
     </div>
-    <script src="script.js"></script>
+    <div class="map-container">Map placeholder - Current Location</div>
+  </div>
+
+  <div id="login" class="page">
+    <h2>Login</h2>
+    <input type="text" placeholder="Username" /><br />
+    <input type="password" placeholder="Password" /><br />
+    <button>Login</button>
+  </div>
+
+  <div id="register" class="page">
+    <h2>Register</h2>
+    <input type="text" placeholder="Username" /><br />
+    <input type="email" placeholder="Email" /><br />
+    <input type="password" placeholder="Password" /><br />
+    <button>Register</button>
+  </div>
+
+  <div id="rates" class="page">
+    <h2>Available Drivers</h2>
+    <ul>
+      <li>Driver 1 - <button>Select</button></li>
+      <li>Driver 2 - <button>Select</button></li>
+      <li>Driver 3 - <button>Select</button></li>
+    </ul>
+    <div>Trip estimate and route preview</div>
+  </div>
+
+  <div id="dashboard-driver" class="page">
+    <h2>Driver Profile</h2>
+    <p>Name Surname</p>
+    <div>
+      <button onclick="alert('General Info')">General Info</button>
+      <button onclick="alert('Vehicle Info')">Vehicle</button>
+      <button onclick="alert('Reviews')">Reviews</button>
+    </div>
+  </div>
+
+  <div id="dashboard-passenger" class="page">
+    <h2>Passenger Profile</h2>
+    <p>Name Surname</p>
+    <div>
+      <button onclick="alert('General Info')">General Info</button>
+      <button onclick="alert('Reviews')">Reviews</button>
+    </div>
+  </div>
+
+<script src="script.js"></script>
 </body>
 </html>
